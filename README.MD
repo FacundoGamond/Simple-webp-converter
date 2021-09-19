@@ -7,5 +7,5 @@ Simple app for convert images into webp format, ideally for wordpress uploads.
 - Run interminal `npm install`.
 - Paste your uploads folder in to the root directory (admits subdirectories).
 - Run interminal `node app`.
-- You can find your converted files into webp-uploads file with the same path tree.
+- You can find your converted files into webp-uploads directory with the same path tree.
 - Enjoy!
