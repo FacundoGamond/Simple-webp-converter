@@ -1,4 +1,5 @@
 const webp = require('webp-converter');
+const dirTree = require("directory-tree");
 const fs = require('fs');
 
 // this will grant 755 permission to webp executables
@@ -8,10 +9,13 @@ webp.grant_permission();
 const inputPath = './uploads/';
 const outputPath = './webp-uploads/';
 
+//Create transform directory
+if (!fs.existsSync(outputPath)) {
+    fs.mkdirSync(outputPath);
+}
 
-const dirTree = require("directory-tree");
+//Check directory tree
 const tree = dirTree(inputPath, {}, null, (item, PATH, stats) => {
-
     let pathTree = '';
     item.path.split('/').forEach((path, key) => {
         pathTree += path + '/';
